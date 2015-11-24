@@ -12,9 +12,14 @@
     <script src="/node_modules/angular/angular.js"></script>
     <!-- UI-Router -->
     <script src="/node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <!-- Firebase -->
+    <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>
+
     <!-- App Script -->
     <script>
-    var myApp = angular.module('myApp', ['ui.router']);
+    var myApp = angular.module('myApp', ['ui.router','firebase']);
     myApp.config(function($stateProvider, $urlRouterProvider){
 
         // For any unmatched url, send to /route1
@@ -48,9 +53,27 @@
             }
         })
     })
+
+    // Firebase example with 3 way binding
+    myApp.controller("SampleCtrl", function($scope, $firebaseObject) {
+        var ref = new Firebase("https://dazzling-torch-1941.firebaseio.com");
+
+        // download the data into a local object
+        var syncObject = $firebaseObject(ref);
+
+        // synchronize the object with a three-way data binding
+        syncObject.$bindTo($scope, "data");
+    });
+
     </script>
 </head>
-<body>
+<body ng-controller="SampleCtrl">
+
+    <!-- Firebase Example -->
+    <!-- anything typed in here is saved to our Firebase database-->
+    <h5>Firebase input:</h5><input type="text" ng-model="data.text"/>
+    <!-- all changes from our Firebase database magically appear here! -->
+    <h1>You said to Firebase: {{ data.text }}</h1>
 
     <!-- Angular Example -->
     <div>
@@ -62,13 +85,13 @@
 
     <!-- UI Router Example -->
     <div class="">
-      <div class="">
-        <a class="" ui-sref="home">Home</a>
-        <ul class="">
-          <li><a ui-sref="route1">Route 1</a></li>
-          <li><a ui-sref="route2">Route 2</a></li>
-        </ul>
-      </div>
+        <div class="">
+            <a class="" ui-sref="home">Home</a>
+            <ul class="">
+                <li><a ui-sref="route1">Route 1</a></li>
+                <li><a ui-sref="route2">Route 2</a></li>
+            </ul>
+        </div>
     </div>
     <div ui-view></div>
 
