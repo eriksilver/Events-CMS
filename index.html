@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en" ng-app>
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -7,6 +7,7 @@
     <title>Foundation | Welcome</title>
     <link rel="stylesheet" href="css/foundation.css" />
     <link rel="stylesheet" href="css/app.css" />
+    <script src="/node_modules/angular/angular.js"></script>
   </head>
   <body>
 
@@ -15,6 +16,13 @@
         <h1>Welcome to Foundation for Sites 6</h1>
       </div>
     </div>
+
+    <div>
+   <label>Name:</label>
+   <input type="text" ng-model="yourName" placeholder="Enter a name here">
+   <hr>
+   <h1>Hello {{yourName}}!</h1>
+ </div>
 
     <div class="row">
       <div class="large-12 columns">
