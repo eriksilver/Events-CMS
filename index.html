@@ -84,19 +84,65 @@
 <body ng-controller="SampleCtrl">
 
     <!-- Firebase html -->
-    <ul>
-        <li ng-repeat="event in events">
-            <!-- edit an event -->
-            <input ng-model="event.eventTitle" ng-change="events.$save(event)" />
-            <!-- delete an event -->
-            <button ng-click="events.$remove(event)">Delete Event</button>
-        </li>
-    </ul>
-    <!-- push a new event onto the array -->
+
+    <h1>EVENTS LIST</h1>
     <form ng-submit="addEvent()">
         <input ng-model="newEventTitle" />
         <button type="submit">Add Event</button>
     </form>
+
+    <form>
+        <ul>
+            <li ng-repeat="event in events">
+                <hr>
+
+                <!-- FEATURED FLAG - DELETE FIELDS -->
+                <div class="row">
+                    <div class="large-6 columns">
+                        <input id="checkbox1" type="checkbox"><label for="checkbox1">Featured</label>
+                    </div>
+                    <div class="large-6 columns">
+                        <a href="#" ng-click="events.$remove(event)" class="button tiny">Delete Event</a>
+                    </div>
+                </div>
+
+                <!-- TITLE FIELD -->
+                <div class="row">
+                    <input class="large-12 columns" ng-model="event.eventTitle" ng-change="events.$save(event)" />
+                </div>
+
+                <!-- CATEGORY - START - END - FIELDS -->
+                <div class="row">
+                    <div class="large-4 columns">
+                        <label>Input Label
+                            <input type="text" placeholder="large-4.columns" />
+                        </label>
+                    </div>
+                    <div class="large-4 columns">
+                        <label>Input Label
+                            <input type="text" placeholder="large-4.columns" />
+                        </label>
+                    </div>
+                    <div class="large-4 columns">
+                        <label>Input Label
+                            <input type="text" placeholder="large-4.columns" />
+                        </label>
+                    </div>
+                </div>
+
+                <!-- DESCRIPTION FIELD -->
+                <div class="row">
+                    <div class="large-12 columns">
+                        <label>Textarea Label
+                            <textarea placeholder="small-12.columns"></textarea>
+                        </label>
+                    </div>
+                </div>
+
+            </li>
+        </ul>
+    </form>
+
 
 
 
@@ -112,9 +158,9 @@
     </div>
     <div ui-view></div>
 
-        <script src="js/vendor/jquery.min.js"></script>
-        <script src="js/vendor/what-input.min.js"></script>
-        <script src="js/foundation.min.js"></script>
-        <script src="js/app.js"></script>
-    </body>
-    </html>
+    <script src="js/vendor/jquery.min.js"></script>
+    <script src="js/vendor/what-input.min.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
