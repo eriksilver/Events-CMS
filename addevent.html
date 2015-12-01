@@ -1,1 +1,68 @@
 <h1>Add Event page</h1>
+
+<form name="addEventForm" ng-submit="addEventForm.$valid && addEvent()">
+    <hr>
+    <!-- TITLE FIELD -->
+    <div class="row">
+        <h2>Title</h2>
+        <input class="small-12 columns" ng-model="eventTitle" required autofocus/>
+    </div>
+    <br>
+    <!-- FEATURED - CATEGORY - START - END - FIELDS -->
+    <div class="row">
+        <div class="small-2 columns">
+            <input type="checkbox" ng-model="featuredFlag"><label> Featured</label>
+        </div>
+        <div class="small-4 columns">
+            <label>Start Date
+                <input type="date" ng-model="startDate" required />
+            </label>
+        </div>
+        <div class="small-6 columns">
+            <label>End Date
+                <input type="date" ng-model="endDate" required />
+            </label>
+        </div>
+    </div>
+
+    <!-- DESCRIPTION FIELD -->
+    <div class="row">
+        <div>
+            <!-- <label>Description
+                <textarea class="small-12 columns" ng-model="description"></textarea>
+            </label> -->
+        </div>
+    </div>
+    <br>
+    <!-- CREATED/UPDATED FIELDS -->
+    <div class="row">
+        <div class="small-3 columns">
+            <label>Category:
+                <input type="text" ng-model="category"/>
+            </label>
+        </div>
+        <!-- <div class="small-4 columns">
+            <label>Created:
+                <input type="text" ng-model="createdAt"></textarea>
+            </label>
+        </div> -->
+        <!-- <div class="small-5 columns">
+            <label>Updated:
+                <input type="text" ng-model="updatedAt"></textarea>
+            </label>
+        </div> -->
+        <!-- SUBMIT BUTTON -->
+        {{addEventForm.input.$valid}}
+        {{addEventForm.input.$error}}
+        {{addEventForm.$valid}}
+        <input
+            type="submit" id="submit" class="button" value="Add Event">
+        </input>
+        <!-- <button ng-click="addEvent(eventTitle,featuredFlag,startDate,endDate,description,category, createdAt, updatedAt)"
+            type="submit" class="button">Save
+        </button> -->
+    </div>
+
+
+
+</form>
