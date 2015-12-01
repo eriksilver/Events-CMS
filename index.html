@@ -66,17 +66,16 @@
         // the event is automatically added to our Firebase database
         $scope.addEvent = function() {
             $scope.events.$add({
-                eventTitle: $scope.newTitle,
-                startDate: $scope.newStart,
-                endDate: $scope.newEnd,
-                category: $scope.newCategory,
-                description: $scope.newDescription,
-                featuredFlag: $scope.newFlag,
+                eventTitle: " ",
+                startDate: " ",
+                endDate: " ",
+                category: " ",
+                description: " ",
+                featuredFlag: " ",
                 createdAt: Firebase.ServerValue.TIMESTAMP,
-                updatedAt: $scope.newUpdate
+                updatedAt: " "
             });
         };
-        console.log("lkdfjdf",event.startDate);
     });
 
     </script>
@@ -86,7 +85,7 @@
     <!-- Firebase html -->
     <div class="row">
         <h3>EVENTS LIST</h3>
-        <a href="#" class="button">Add Event</a>
+        <a href="#" class="button success">Add Event</a>
     </div>
 
     <form>
@@ -107,11 +106,6 @@
                         <input id="checkbox1" type="checkbox" ng-model="event.featuredFlag" ng-change="events.$save(event)"><label for="checkbox1"> Featured</label>
                     </div>
                     <div class="small-4 columns">
-                        <label>Category
-                            <input type="text" ng-model="event.category" ng-change="events.$save(event)" />
-                        </label>
-                    </div>
-                    <div class="small-6 columns">
                         <label>Start Date
                             <input type="text" ng-model="event.startDate" ng-change="events.$save(event)" />
                         </label>
@@ -134,42 +128,54 @@
                 <br>
                 <!-- CREATED/UPDATED FIELDS -->
                 <div class="row">
-                    <div class="small-2 columns">
-                        <a href="#" ng-click="events.$remove(event)" class="button tiny alert">Delete Event</a>
+                    <div class="small-3 columns">
+                        <label>Category:
+                            <input type="text" ng-model="event.category" ng-change="events.$save(event)" />
+                        </label>
                     </div>
                     <div class="small-4 columns">
-                        <label>Created At:
+                        <label>Created:
                             <input type="text" ng-model="event.createdAt" ng-change="events.$save(event)"></textarea>
                         </label>
                     </div>
-                    <div class="small-6 columns">
-                        <label>Updated At:
+                    <div class="small-5 columns">
+                        <label>Updated:
                             <input type="text" ng-model="event.updatedAt" ng-change="events.$save(event)"></textarea>
                         </label>
                     </div>
                 </div>
-            </li>
-        </ul>
-    </form>
+                <br>
+                <div class="row">
+                    <div class="small-2 columns">
+                        <a href="#" class="button tiny">Edit Event</a>
+                    </div>
+                    <div class="small-10 columns">
+                        <a href="#" ng-click="events.$remove(event)" class="button tiny alert">Delete Event</a>
+                    </div>
+                </row>
+            </div>
+        </li>
+    </ul>
+</form>
 
 
 
 
-    <!-- UI Router Example -->
+<!-- UI Router Example -->
+<div class="">
     <div class="">
-        <div class="">
-            <a class="" ui-sref="home">Home</a>
-            <ul class="">
-                <li><a ui-sref="route1">Route 1</a></li>
-                <li><a ui-sref="route2">Route 2</a></li>
-            </ul>
-        </div>
+        <a class="" ui-sref="home">Home</a>
+        <ul class="">
+            <li><a ui-sref="route1">Route 1</a></li>
+            <li><a ui-sref="route2">Route 2</a></li>
+        </ul>
     </div>
-    <div ui-view></div>
+</div>
+<div ui-view></div>
 
-    <script src="js/vendor/jquery.min.js"></script>
-    <script src="js/vendor/what-input.min.js"></script>
-    <script src="js/foundation.min.js"></script>
-    <script src="js/app.js"></script>
+<script src="js/vendor/jquery.min.js"></script>
+<script src="js/vendor/what-input.min.js"></script>
+<script src="js/foundation.min.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
