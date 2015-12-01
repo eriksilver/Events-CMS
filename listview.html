@@ -1,0 +1,74 @@
+<div class="row">
+    <h3>EVENTS LIST</h3>
+    <a ui-sref="addEvent" class="button success">Add Event</a>
+</div>
+
+<form>
+    <ul>
+        <li ng-repeat="event in events">
+            <hr>
+
+            <!-- TITLE FIELD -->
+            <div class="row">
+                <div>
+                    <input class="small-12 columns" ng-model="event.eventTitle" ng-change="events.$save(event)" />
+                </div>
+            </div>
+            <br>
+            <!-- FEATURED - CATEGORY - START - END - FIELDS -->
+            <div class="row">
+                <div class="small-2 columns">
+                    <input id="checkbox1" type="checkbox" ng-model="event.featuredFlag" ng-change="events.$save(event)"><label for="checkbox1"> Featured</label>
+                </div>
+                <div class="small-4 columns">
+                    <label>Start Date
+                        <input type="text" ng-model="event.startDate" ng-change="events.$save(event)" />
+                    </label>
+                </div>
+                <div class="small-6 columns">
+                    <label>End Date
+                        <input type="text" ng-model="event.endDate" ng-change="events.$save(event)"/>
+                    </label>
+                </div>
+            </div>
+
+            <!-- DESCRIPTION FIELD -->
+            <div class="row">
+                <div>
+                    <label>Description
+                        <textarea class="small-12 columns" ng-model="event.description" ng-change="events.$save(event)"></textarea>
+                    </label>
+                </div>
+            </div>
+            <br>
+            <!-- CREATED/UPDATED FIELDS -->
+            <div class="row">
+                <div class="small-3 columns">
+                    <label>Category:
+                        <input type="text" ng-model="event.category" ng-change="events.$save(event)" />
+                    </label>
+                </div>
+                <div class="small-4 columns">
+                    <label>Created:
+                        <input type="text" ng-model="event.createdAt" ng-change="events.$save(event)"></textarea>
+                    </label>
+                </div>
+                <div class="small-5 columns">
+                    <label>Updated:
+                        <input type="text" ng-model="event.updatedAt" ng-change="events.$save(event)"></textarea>
+                    </label>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="small-2 columns">
+                    <a href="#" class="button tiny">Edit Event</a>
+                </div>
+                <div class="small-10 columns">
+                    <a href="#" ng-click="events.$remove(event)" class="button tiny alert">Delete Event</a>
+                </div>
+            </row>
+        </div>
+    </li>
+</ul>
+</form>
