@@ -1,0 +1,61 @@
+<h1>Edit Event page</h1>
+
+<!-- SUCCESS/FAIL MESSAGE FOR ADDING AN EVENT -->
+<div data-alert class="alert-box success radius"
+ng-repeat="alert in alerts" type="{{alert.type}}">{{alert.message}}
+<a ng-click="closeAlert($index)" class="close">&times;</a>
+</div>
+
+<form name="editEventForm" ng-submit="editEventForm.$valid && editEvent()">
+
+    <hr>
+    <!-- TITLE FIELD -->
+    <div class="row">
+        <h2>Title</h2>
+        <input class="small-12 columns" ng-model="newEvent.eventTitle" required autofocus/>
+    </div>
+    <br>
+    <!-- FEATURED - CATEGORY - START - END - FIELDS -->
+    <div class="row">
+        <div class="small-2 columns">
+            <input type="checkbox" ng-model="newEvent.featuredFlag"><label> Featured</label>
+        </div>
+        <div class="small-4 columns">
+            <label>Start Date
+                <input type="date" ng-model="newEvent.startDate" required />
+            </label>
+        </div>
+        <div class="small-6 columns">
+            <label>End Date
+                <input type="date" ng-model="newEvent.endDate" required />
+            </label>
+        </div>
+    </div>
+
+    <!-- DESCRIPTION FIELD -->
+    <div class="row">
+        <div>
+            <label>Description
+                <textarea class="small-12 columns" ng-model="newEvent.description"></textarea>
+            </label>
+        </div>
+    </div>
+    <br>
+    <!-- CREATED/UPDATED FIELDS -->
+    <div class="row">
+        <div class="small-3 columns">
+            <label>Category:
+                <input type="text" ng-model="newEvent.category"/>
+            </label>
+        </div>
+        <!-- SUBMIT BUTTON -->
+
+        <!-- {{addEventForm.$valid}} -->
+        <input
+        type="submit" id="submit" class="button" value="Edit Event">
+    </input>
+</div>
+
+
+
+</form>

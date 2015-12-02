@@ -9,10 +9,10 @@ angular.module('EventCMS')
         //Firebase callback to register sync fail/success
         var onComplete = function(error) {
             if (error) {
-                $rootScope.$broadcast('saveEvent', {message: "Profile Update Failed", result: "failure"});
+                $rootScope.$broadcast('saveEvent', {message: "Event Creation Failed", result: "failure"});
                 $log.log('Synchronization failed');
             } else {
-                $rootScope.$broadcast('saveEvent', {message: "Profile Updated", result: "success"});
+                $rootScope.$broadcast('saveEvent', {message: "Event Created!", result: "success"});
                 $log.log('Synchronization succeeded');
             }
         };

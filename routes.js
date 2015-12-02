@@ -20,4 +20,9 @@ angular.module('EventCMS')
         templateUrl: 'addevent.html',
         controller: 'AddCtrl',
     })
+    .state('editEvent', {
+        url: '/edit',
+        templateUrl: 'editevent.html',
+        controller: 'EditCtrl',
+    })
 });
