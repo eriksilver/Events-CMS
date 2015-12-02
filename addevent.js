@@ -6,16 +6,19 @@ angular.module('EventCMS')
 
         $log.info("AddCtrl ran");
 
+
+
         //create Firebase events array
         var ref = new Firebase("https://dazzling-torch-1941.firebaseio.com/events");
+
 
         // create a synchronized array for events
         $scope.events = $firebaseArray(ref);
 
         var EMPTY_EVENT = {
             eventTitle: " ",
-            startDate: " ",
-            endDate: " ",
+            startDate: new Date(),
+            endDate: new Date(),
             category: " ",
             description: " ",
             featuredFlag: " ",
@@ -44,22 +47,37 @@ angular.module('EventCMS')
         // the event is automatically added to our Firebase database
         $scope.addEvent = function() {
             // var cleandEvent = transform_dates($scope.newEvent);
-            transform_dates($scope.startDate,$scope.endDate);
+            transform_dates($scope.newEvent.startDate,$scope.newEvent.endDate);
+            // var test = $scope.newEvent;
+            // $log.info("test=$scope.newEvent",test);
 
-            var title = $scope.eventTitle;
-            var flag = $scope.featuredFlag;
-            var start = unixStart;
-            var end = unixEnd;
-            var category = $scope.category;
-            var description = $scope.description;
-            var created = unixCurrent;
-            var updated = ' ';
-            $log.info("check variables",title,flag,start,end,category,description,created, updated);
-            debugger
-            // $scope.events.$add($scope.event);
+            $scope.newEvent = {
+                eventTitle: $scope.newEvent.eventTitle,
+                startDate: unixStart,
+                endDate: unixEnd,
+                category: $scope.newEvent.category,
+                description: $scope.newEvent.description,
+                featuredFlag: $scope.newEvent.featuredFlag,
+                createdAt:  unixCurrent,
+                updatedAt: " "
+            };
+
+
+            $scope.events.$add($scope.newEvent);
+
+            //use push or set method instead of $add to get access to callback??
+
+            // console.log('oncomplete:',onComplete);
+
+
+
+
             setup_empty_event_state();
         };
+        // $scope.events.$watch(function(event) {
+        //     console.log("event:",event);
+        // });
 
         setup_empty_event_state();
 
-}]);
+    }]);
