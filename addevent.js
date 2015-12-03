@@ -65,7 +65,8 @@ angular.module('EventCMS')
             };
 
             //Firebase push method to save newEvent data to array
-            ref.push($scope.newEvent,onComplete);
+            var newEventAdded = ref.push($scope.newEvent,onComplete);
+            $log.info("new event key:", newEventAdded.key());
 
             //call setup empty state to reset the entry form after new event is added
             setup_empty_event_state();
