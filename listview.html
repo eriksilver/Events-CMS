@@ -20,10 +20,10 @@
                     <input type="checkbox" ng-model="event.featuredFlag" ><label> Featured</label>
                 </div>
                 <div class="small-4 columns" ng-model="event.startDate">
-                    Start Date: {{event.startDate}}
+                    Start Date: {{ event.startDate | date }}
                 </div>
                 <div class="small-6 columns" ng-model="event.endDate">
-                    End Date: {{event.endDate}}
+                    End Date: {{ event.endDate | date }}
                 </div>
             </div>
 
@@ -42,10 +42,10 @@
                     Category: {{event.category}}
                 </div>
                 <div class="small-4 columns" ng-model="event.createdAt">
-                    Created: {{event.createdAt}}
+                    Created: {{ event.createdAt | date : 'medium' }}
                 </div>
                 <div class="small-5 columns" ng-model="event.updatedAt">
-                    Updated: {{event.updatedAt}}
+                    Updated: {{ event.updatedAt | date : 'medium' }}
                 </div>
             </div>
             <br>
