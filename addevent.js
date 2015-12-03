@@ -41,7 +41,8 @@ angular.module('EventCMS')
         var unixCurrent = " ";
 
         function transform_dates(start,end) {
-            //convert data picker dates to integer format that is acceptable to Firebase
+            //Date picker dates are in "Zulu time" (UTC)
+            //convert to unix/integer format that is acceptable to Firebase
             unixStart = start.getTime();
             unixEnd = end.getTime();
             //capture current date in unix/integer format
