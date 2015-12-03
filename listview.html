@@ -7,56 +7,45 @@
     <ul>
         <li ng-repeat="event in events">
             <hr>
-
             <!-- TITLE FIELD -->
             <div class="row">
-                <div>
-                    <input class="small-12 columns" ng-model="event.eventTitle" />
+                <div class="small-12 columns" ng-model="event.eventTitle" >
+                    <h4>Title: {{event.eventTitle}}f</h4>
                 </div>
             </div>
             <br>
             <!-- FEATURED - CATEGORY - START - END - FIELDS -->
             <div class="row">
                 <div class="small-2 columns">
-                    <input id="checkbox1" type="checkbox" ng-model="event.featuredFlag" ><label for="checkbox1"> Featured</label>
+                    <input type="checkbox" ng-model="event.featuredFlag" ><label> Featured</label>
                 </div>
-                <div class="small-4 columns">
-                    <label>Start Date
-                        <input type="text" ng-model="event.startDate" />
-                    </label>
+                <div class="small-4 columns" ng-model="event.startDate">
+                    Start Date: {{event.startDate}}
                 </div>
-                <div class="small-6 columns">
-                    <label>End Date
-                        <input type="text" ng-model="event.endDate" />
-                    </label>
+                <div class="small-6 columns" ng-model="event.endDate">
+                    End Date: {{event.endDate}}
                 </div>
             </div>
 
             <!-- DESCRIPTION FIELD -->
             <div class="row">
-                <div>
-                    <label>Description
-                        <textarea class="small-12 columns" ng-model="event.description"></textarea>
-                    </label>
-                </div>
+              <div  ng-model="event.description">
+                <label class="small-10 columns">Description
+                  <textarea class="small-11 columns">{{event.description}}</textarea>
+                </label>
+              </div>
             </div>
             <br>
             <!-- CREATED/UPDATED FIELDS -->
             <div class="row">
-                <div class="small-3 columns">
-                    <label>Category:
-                        <input type="text" ng-model="event.category" />
-                    </label>
+                <div class="small-3 columns" ng-model="event.category">
+                    Category: {{event.category}}
                 </div>
-                <div class="small-4 columns">
-                    <label>Created:
-                        <input type="text" ng-model="event.createdAt"></textarea>
-                    </label>
+                <div class="small-4 columns" ng-model="event.createdAt">
+                    Created: {{event.createdAt}}
                 </div>
-                <div class="small-5 columns">
-                    <label>Updated:
-                        <input type="text" ng-model="event.updatedAt" ></textarea>
-                    </label>
+                <div class="small-5 columns" ng-model="event.updatedAt">
+                    Updated: {{event.updatedAt}}
                 </div>
             </div>
             <br>
