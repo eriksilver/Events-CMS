@@ -50,8 +50,8 @@
             </div>
             <br>
             <div class="row">
-                <div class="small-2 columns">
-                    <a ui-sref="editEvent" ng-click="getEventId()" class="button tiny">Edit Event</a>
+                <div class="small-2 columns" ng-model="event.$id">
+                    <a ui-sref="editEvent({passId: event.$id})" ng-click="getEventId()" class="button tiny">Edit Event</a>
                 </div>
                 <div class="small-10 columns">
                     <a href="#" ng-click="events.$remove(event)" class="button tiny alert">Delete Event</a>

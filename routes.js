@@ -24,5 +24,6 @@ angular.module('EventCMS')
         url: '/edit',
         templateUrl: 'editevent.html',
         controller: 'EditCtrl',
+        params: {passId: ""}
     })
 });
