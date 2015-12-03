@@ -11,6 +11,9 @@ angular.module('EventCMS')
 
         // create a synchronized array for events
         $scope.events = $firebaseArray(ref);
+        var newChildRef = ref.push();
+
+        $log.info("child key:",newChildRef.key());
 
         // setup database schema
         // the event is automatically added to our Firebase database
@@ -26,4 +29,8 @@ angular.module('EventCMS')
                 updatedAt: " "
             });
         };
+
+        $scope.getEventId = function () {
+
+        }
     }]);
