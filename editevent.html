@@ -22,13 +22,13 @@ ng-repeat="alert in alerts" type="{{alert.type}}">{{alert.message}}
         </div>
         <div class="small-4 columns">
             <label>Start Date
-                <input type="text" ng-model="event.startDate" required />{{event.startDate}}
+                <input type="date" ng-model="event.startDate" required />
             </label>
 
         </div>
         <div class="small-6 columns">
             <label>End Date
-                <input type="text" ng-model="event.endDate" required />
+                <input type="date" ng-model="event.endDate" required />
             </label>
         </div>
     </div>
@@ -50,13 +50,9 @@ ng-repeat="alert in alerts" type="{{alert.type}}">{{alert.message}}
             </label>
         </div>
         <!-- SUBMIT BUTTON -->
-
-        <!-- {{addEventForm.$valid}} -->
+        {{editEventForm.$valid}}
         <input
         type="submit" id="submit" class="button" value="Edit Event">
     </input>
 </div>
-
-
-
 </form>
