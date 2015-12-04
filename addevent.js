@@ -40,7 +40,7 @@ angular.module('EventCMS')
         var unixEnd = " ";
         var unixCurrent = " ";
 
-        function transform_dates(start,end) {
+        function transform_dates_to_unix(start,end) {
             //Date picker dates are in "Zulu time" (UTC)
             //convert to unix/integer format that is acceptable to Firebase
             unixStart = start.getTime();
@@ -52,7 +52,7 @@ angular.module('EventCMS')
 
         //addEvent function will add a newEvent based on database schema
         $scope.addEvent = function() {
-            transform_dates($scope.newEvent.startDate,$scope.newEvent.endDate);
+            transform_dates_to_unix($scope.newEvent.startDate,$scope.newEvent.endDate);
 
             $scope.newEvent = {
                 eventTitle: $scope.newEvent.eventTitle,
@@ -67,7 +67,6 @@ angular.module('EventCMS')
 
             //Firebase push method to save newEvent data to array
             var newEventAdded = ref.push($scope.newEvent,onComplete);
-            $log.info("new event key:", newEventAdded.key());
 
             //call setup empty state to reset the entry form after new event is added
             setup_empty_event_state();
@@ -79,7 +78,7 @@ angular.module('EventCMS')
         //setup alerts in controller scope
         $scope.alerts = alertsManager.alerts;
 
-        //use $on method to receive Broadcast of Alert message
+            //use $on method to receive Broadcast of Alert message
         //add the Broadcast message (message, result) to alertsManager
         $scope.$on('saveEvent', function(event,args) {
             alertsManager.add({
