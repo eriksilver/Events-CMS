@@ -43,3 +43,14 @@ myApp.directive('myCustomer', function() {
     templateUrl: 'my-customer-plus-vojta.html'
   };
 });
+
+myApp.directive('myEvent', function() {
+  return {
+    restrict: 'E',
+    //transclude: true, //only want content of our directive in the template
+    scope: {
+      test: "@"
+    },
+    templateUrl: 'eventdetails.html'
+  };
+});
