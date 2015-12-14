@@ -1,0 +1,43 @@
+<!-- FEATURED - CATEGORY - START - END - FIELDS -->
+<div class="row">
+    <div class="small-2 columns">
+        <input type="checkbox" ng-model="event.featuredFlag" ><label> Featured</label>
+    </div>
+    <div class="small-4 columns" ng-model="event.startDate">
+        Start Date: {{ event.startDate | date }}
+    </div>
+    <div class="small-6 columns" ng-model="event.endDate">
+        End Date: {{ event.endDate | date }}
+    </div>
+</div>
+
+<!-- DESCRIPTION FIELD -->
+<div class="row">
+    <div  ng-model="event.description">
+        <label class="small-10 columns">Description
+            <textarea class="small-11 columns">{{event.description}}</textarea>
+        </label>
+    </div>
+</div>
+<br>
+<!-- CREATED/UPDATED FIELDS -->
+<div class="row">
+    <div class="small-3 columns" ng-model="event.category">
+        Category: {{event.category}}
+    </div>
+    <div class="small-4 columns" ng-model="event.createdAt">
+        Created: {{ event.createdAt | date : 'medium' }}
+    </div>
+    <div class="small-5 columns" ng-model="event.updatedAt">
+        Updated: {{ event.updatedAt | date : 'medium' }}
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="small-2 columns" ng-model="event.$id">
+        <a ui-sref="editEvent({passId: event.$id})" ng-click="getEventId()" class="button tiny">Edit Event</a>
+    </div>
+    <div class="small-10 columns">
+        <a href="#" ng-click="events.$remove(event)" class="button tiny alert">Delete Event</a>
+    </div>
+</div>
