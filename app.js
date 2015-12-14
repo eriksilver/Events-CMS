@@ -46,11 +46,12 @@ myApp.directive('myCustomer', function() {
 
 myApp.directive('myEvent', function() {
   return {
-    restrict: 'E',
+    restrict: 'EA',
     //transclude: true, //only want content of our directive in the template
     scope: {
-      test: "@"
+      title: '@'
     },
-    templateUrl: 'eventdetails.html'
+    // templateUrl: 'eventdetails.html'
+    template: '{{ title }}'
   };
 });

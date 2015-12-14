@@ -12,10 +12,10 @@ angular.module('EventCMS')
         $scope.events = $firebaseArray(ref);
         console.log("scope.events",$scope.events);
 
-        $scope.test = "testing testing 123";
+        $scope.test = { title: 'First Event', date: 'Jan 14' };
         console.log("scope.test",$scope.test);
 
         $scope.vojta = { name: 'Vojta', address: '3456 Somewhere Else' };
-        
+
 
 }]);
