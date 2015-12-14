@@ -15,12 +15,9 @@
                 <div class="small-12 columns">
                     <a href="" ng-click="showDetails = ! showDetails">view details</a>
                 </div>
-                <div ng-show="showDetails">showing details.......</div>
-                
-                <my-event ng-test="testing 24816"></my-event>
-                <div ng-controller="Controller">
-                  <my-customer info="vojta"></my-customer>
-                </div>
+                <my-customer info="vojta" ng-show="showDetails">showing details.......</my-customer>
+
+                <my-event></my-event>
             </div>
         </li>
     </ul>
