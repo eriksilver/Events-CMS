@@ -96,6 +96,7 @@ angular.module('EventCMS')
 
         $scope.buttonClick = function(){
             $scope.buttonDisabled = true;
+            $scope.buttonValue = "processing...";
             console.log("button clicked");
         }
 
