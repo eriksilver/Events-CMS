@@ -24,6 +24,7 @@
                 <div class="small-12 columns">
                     <a href="" ng-click="showDetails = ! showDetails">view details</a>
                 </div>
+                <!-- myEvent directive, names match to directive scope, data to $scope.events -->
                 <my-event ng-show="showDetails"
                 description="{{event.description}}"
                 featured="{{event.featuredFlag}}"

@@ -28,11 +28,13 @@ myApp.factory("alertsManager", ["$log",
         };
     }
 ])
-
+//myEvent directive attached specified behavior/data to a DOM element/tag
+//restricted to 'E' - element name only (my-event) - directive is in the listview.html
+//isolate scope defined; binds outer scope to directive scope with '@'
+//directive pulls template via ajax from specified url
 myApp.directive('myEvent', function() {
   return {
     restrict: 'E',
-    //transclude: true, //only want content of our directive in the template
     scope: {
       description: '@',
       featured: '@',
