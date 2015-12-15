@@ -11,9 +11,11 @@ angular.module('EventCMS')
             if (error) {
                 $rootScope.$broadcast('saveEvent', {message: "Event Creation Failed", result: "failure"});
                 $log.log('Synchronization failed');
+                buttonClickEnable();
             } else {
                 $rootScope.$broadcast('saveEvent', {message: "Event Created!", result: "success"});
                 $log.log('Synchronization succeeded');
+                buttonClickEnable();
             }
         };
 
@@ -52,6 +54,7 @@ angular.module('EventCMS')
 
         //addEvent function will add a newEvent based on database schema
         $scope.addEvent = function() {
+            buttonClickDisable();
             transform_dates_to_unix($scope.newEvent.startDate,$scope.newEvent.endDate);
 
             $scope.newEvent = {
@@ -94,10 +97,17 @@ angular.module('EventCMS')
             alertsManager.remove(index);
         };
 
-        $scope.buttonClick = function(){
+        buttonClickDisable = function(){
             $scope.buttonDisabled = true;
             $scope.buttonValue = "processing...";
-            console.log("button clicked");
+            $log.info("button clicked & disabled");
+        }
+
+        buttonClickEnable = function(){
+            $scope.buttonDisabled = false;
+            $scope.buttonValue = "Add Event";
+
+            $log.info("button enabled");
         }
 
     }]);
