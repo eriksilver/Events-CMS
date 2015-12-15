@@ -49,7 +49,13 @@ myApp.directive('myEvent', function() {
     restrict: 'EA',
     //transclude: true, //only want content of our directive in the template
     scope: {
-      description: '@'
+      description: '@',
+      featured: '@',
+      start: '@',
+      end: '@',
+      category: '@',
+      created: '@',
+      updated: '@'
     },
     templateUrl: 'eventdetails.html'
   };

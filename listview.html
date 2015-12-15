@@ -17,7 +17,15 @@
                 </div>
                 <!-- <my-customer info="vojta" ng-show="showDetails">showing details.......</my-customer> -->
                 <!-- <my-event ng-show="showDetails" title="{{test.title}}">details...</my-event> -->
-                <my-event ng-show="showDetails" description="{{event.description}}"></my-event>
+                <my-event ng-show="showDetails"
+                description="{{event.description}}"
+                featured="{{event.featuredFlag}}"
+                start="{{event.startDate}}"
+                end="{{event.endDate}}"
+                category="{{event.category}}"
+                created="{{event.createdAt}}"
+                updated="{{event.updatedAt}}"
+                ></my-event>
 
 
                 <!-- <my-event></my-event> -->

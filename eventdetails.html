@@ -2,12 +2,36 @@
 <!-- <div>Test: {{ title }}</div> -->
 
 <div class="row">
+    <div class="small-2 columns">
+        <input type="checkbox" ng-model="event.featuredFlag" ng-checked="{{ featured }}"><label> Featured</label>
+    </div>
+    <div class="small-4 columns" ng-model="event.startDate">
+        Start Date: {{ start | date }}
+    </div>
+    <div class="small-6 columns" ng-model="event.endDate">
+        End Date: {{ end | date }}
+    </div>
+</div>
+
+<!-- DESCRIPTION FIELD -->
+<div class="row">
     <div  ng-model="event.description">
         <label class="small-10 columns">Description
             <textarea class="small-11 columns">{{description}}</textarea>
         </label>
     </div>
-    <div class="small-2 columns">
-        <input type="checkbox" ng-model="event.featuredFlag" ><label> Featured</label>
+</div>
+<br>
+<!-- CREATED/UPDATED FIELDS -->
+<div class="row">
+    <div class="small-3 columns" ng-model="event.category">
+        Category: {{category}}
     </div>
+    <div class="small-4 columns" ng-model="event.createdAt">
+        Created: {{ created | date : 'medium' }}
+    </div>
+    <div class="small-5 columns" ng-model="event.updatedAt">
+        Updated: {{ updated | date : 'medium' }}
+    </div>
+    <br>
 </div>
