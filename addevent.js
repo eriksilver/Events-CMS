@@ -92,7 +92,7 @@ angular.module('EventCMS')
             $scope.$apply();
         });
 
-        //close alert when icon is clicked by removing array item
+        //close alert called after time out or x is clicked and alert array item is removed
         $scope.closeAlert = function (index) {
             alertsManager.remove(index);
         };
