@@ -10,13 +10,15 @@
             <!-- TITLE FIELD -->
             <div class="row">
                 <div class="small-12 columns" ng-model="event.eventTitle" >
-                    <h4>Title: {{event.eventTitle}}f</h4>
+                    <h4>Title: {{event.eventTitle}}</h4>
                 </div>
                 <div class="small-12 columns">
                     <a href="" ng-click="showDetails = ! showDetails">view details</a>
                 </div>
                 <!-- <my-customer info="vojta" ng-show="showDetails">showing details.......</my-customer> -->
-                <my-event ng-show="showDetails" title="{{test.title}}">details...</my-event>
+                <!-- <my-event ng-show="showDetails" title="{{test.title}}">details...</my-event> -->
+                <my-event ng-show="showDetails" description="{{event.description}}"></my-event>
+
 
                 <!-- <my-event></my-event> -->
             </div>

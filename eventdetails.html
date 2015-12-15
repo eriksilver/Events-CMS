@@ -1,3 +1,13 @@
 <!-- FEATURED - CATEGORY - START - END - FIELDS -->
-<p>Test: {{ title }}</p>
-    
+<!-- <div>Test: {{ title }}</div> -->
+
+<div class="row">
+    <div  ng-model="event.description">
+        <label class="small-10 columns">Description
+            <textarea class="small-11 columns">{{description}}</textarea>
+        </label>
+    </div>
+    <div class="small-2 columns">
+        <input type="checkbox" ng-model="event.featuredFlag" ><label> Featured</label>
+    </div>
+</div>
