@@ -31,7 +31,7 @@ myApp.factory("alertsManager", ["$log",
 
 myApp.directive('myEvent', function() {
   return {
-    restrict: 'EA',
+    restrict: 'E',
     //transclude: true, //only want content of our directive in the template
     scope: {
       description: '@',
