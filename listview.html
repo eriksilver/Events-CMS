@@ -15,8 +15,6 @@
                 <div class="small-12 columns">
                     <a href="" ng-click="showDetails = ! showDetails">view details</a>
                 </div>
-                <!-- <my-customer info="vojta" ng-show="showDetails">showing details.......</my-customer> -->
-                <!-- <my-event ng-show="showDetails" title="{{test.title}}">details...</my-event> -->
                 <my-event ng-show="showDetails"
                 description="{{event.description}}"
                 featured="{{event.featuredFlag}}"
@@ -26,9 +24,6 @@
                 created="{{event.createdAt}}"
                 updated="{{event.updatedAt}}"
                 ></my-event>
-
-
-                <!-- <my-event></my-event> -->
             </div>
         </li>
     </ul>
