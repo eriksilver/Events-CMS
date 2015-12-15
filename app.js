@@ -51,7 +51,6 @@ myApp.directive('myEvent', function() {
     scope: {
       title: '@'
     },
-    // templateUrl: 'eventdetails.html'
-    template: '{{ title }}'
+    templateUrl: 'eventdetails.html'
   };
 });
