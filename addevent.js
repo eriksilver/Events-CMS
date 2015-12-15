@@ -78,7 +78,7 @@ angular.module('EventCMS')
         //setup alerts in controller scope
         $scope.alerts = alertsManager.alerts;
 
-            //use $on method to receive Broadcast of Alert message
+        //use $on method to receive Broadcast of Alert message
         //add the Broadcast message (message, result) to alertsManager
         $scope.$on('saveEvent', function(event,args) {
             alertsManager.add({
@@ -93,5 +93,10 @@ angular.module('EventCMS')
         $scope.closeAlert = function (index) {
             alertsManager.remove(index);
         };
+
+        $scope.buttonClick = function(){
+            $scope.buttonDisabled = true;
+            console.log("button clicked");
+        }
 
     }]);

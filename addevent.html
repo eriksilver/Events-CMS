@@ -52,8 +52,8 @@ ng-repeat="alert in alerts" type="{{alert.type}}">{{alert.message}}
         <!-- SUBMIT BUTTON -->
         <!-- {{addEventForm.$valid}} -->
         <input
-        type="submit" id="submit" class="button" value="Add Event">
-    </input>
+        type="submit" id="submit" class="button" ng-click="buttonClick()" ng-disabled="buttonDisabled" value="Add Event">
+        </input>
 </div>
 
 
