@@ -7,7 +7,7 @@ var app = express();
 app.use(express.static('public'));
 
 //define port -Heroku will get random port each time app is run
-//when running locally, 'forego start' will use .env file to define port
+//when running locally, 'npm start' will use .env file (if available), otherwise will default to 3000
 var port = process.env.PORT || 3000;
 //the listen method binds and listens for connections on the specified host and port
 app.listen(port, function() {
