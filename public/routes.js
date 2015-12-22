@@ -26,4 +26,8 @@ angular.module('EventCMS')
         controller: 'EditCtrl',
         params: {passId: ""}
     })
+    .state('about', {
+        url: '/about',
+        templateUrl: 'about.html'
+    })
 });
