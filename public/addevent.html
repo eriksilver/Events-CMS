@@ -1,4 +1,4 @@
-<h1>Add Event page</h1>
+<h1 class="add-title">Add an Event</h1>
 
 <!-- SUCCESS/FAIL MESSAGE FOR ADDING AN EVENT -->
 <div data-alert class="alert-box success radius"
@@ -7,55 +7,51 @@ ng-repeat="alert in alerts" type="{{alert.type}}">{{alert.message}}
 </div>
 
 <form name="addEventForm" ng-submit="addEventForm.$valid && addEvent()">
-
-    <hr>
-    <!-- TITLE FIELD -->
+    <!-- TITLE  -->
     <div class="row">
-        <h2>Title</h2>
-        <input class="small-12 columns" ng-model="newEvent.eventTitle" required autofocus/>
+        <div class="small-12 columns">Title
+            <input ng-model="newEvent.eventTitle" required autofocus/>
+        </div>
     </div>
-    <br>
-    <!-- FEATURED - CATEGORY - START - END - FIELDS -->
+
+    <!-- CATEGORY -->
+    <div class="row">
+        <div class="small-5 columns">Category
+            <input type="text" ng-model="newEvent.category"/>
+        </div>
+    </div>
+
+    <!-- START - END -->
+    <div class="row">
+        <div class="small-5 columns">Start Date
+            <input type="date" ng-model="newEvent.startDate" required />
+        </div>
+        <div class="small-6 columns">End Date
+            <input type="date" ng-model="newEvent.endDate" required />
+        </div>
+    </div>
+
+    <!-- DESCRIPTION  -->
+    <div class="row">
+        <div class="small-12 columns">Description
+            <textarea ng-model="newEvent.description"></textarea>
+        </div>
+    </div>
+
+    <!-- FEATURED -->
+    <div class="row">
+        <div class="small-4 columns">
+            <input type="checkbox" ng-model="newEvent.featuredFlag"> Featured
+        </div>
+    </div>
+
+    <!-- SUBMIT BUTTON -->
+    <!-- {{addEventForm.$valid}} -->
     <div class="row">
         <div class="small-2 columns">
-            <input type="checkbox" ng-model="newEvent.featuredFlag"><label> Featured</label>
-        </div>
-        <div class="small-4 columns">
-            <label>Start Date
-                <input type="date" ng-model="newEvent.startDate" required />
-            </label>
-        </div>
-        <div class="small-6 columns">
-            <label>End Date
-                <input type="date" ng-model="newEvent.endDate" required />
-            </label>
-        </div>
-    </div>
-
-    <!-- DESCRIPTION FIELD -->
-    <div class="row">
-        <div>
-            <label>Description
-                <textarea class="small-12 columns" ng-model="newEvent.description"></textarea>
-            </label>
-        </div>
-    </div>
-    <br>
-    <!-- CREATED/UPDATED FIELDS -->
-    <div class="row">
-        <div class="small-3 columns">
-            <label>Category:
-                <input type="text" ng-model="newEvent.category"/>
-            </label>
-        </div>
-
-        <!-- SUBMIT BUTTON -->
-        <!-- {{addEventForm.$valid}} -->
-        <input
-        type="submit" id="submit" class="button" ng-disabled="buttonDisabled" ng-init="buttonValue = 'Add Event'" value="{{buttonValue}}">
+            <input
+            type="submit" id="submit" class="button" ng-disabled="buttonDisabled" ng-init="buttonValue = 'Add Event'" value="{{buttonValue}}">
         </input>
+    </div>
 </div>
-
-
-
 </form>
