@@ -1,8 +1,8 @@
 angular.module('EventCMS')
 
 .controller("EditCtrl", [
-    "$scope", "$state", "$log","$firebaseArray", "alertsManager", "$rootScope", "$stateParams",
-    function($scope, $state, $log, $firebaseArray, alertsManager, $rootScope, $stateParams)  {
+    "$scope", "$state", "$log", "$timeout", "$firebaseArray", "alertsManager", "$rootScope", "$stateParams",
+    function($scope, $state, $log, $timeout, $firebaseArray, alertsManager, $rootScope, $stateParams)  {
 
         $log.info("EditCtrl ran");
 
@@ -103,8 +103,9 @@ angular.module('EventCMS')
             alertsManager.add({
                 message: args.message,
                 type: args.result,
-                // timeout: 6000,
             });
+            //use Angular $timeout to call closeAlert function after X milliseconds
+            $timeout(function () {$scope.closeAlert();},3000);
             $scope.$apply();
         });
 
