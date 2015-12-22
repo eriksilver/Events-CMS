@@ -1,12 +1,19 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="en" ng-app="EventCMS">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foundation | Welcome</title>
-    <link rel="stylesheet" href="css/foundation.css" />
-    <link rel="stylesheet" href="css/app.css" />
+    <title>Event Management CMS</title>
+
+    <!-- If you are using the CSS version, only link these 2 files, you may add app.css to use for your overrides if you like -->
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/foundation-icons.css" />
+
+    <!-- If you are using the gem version, you need this only -->
+    <link rel="stylesheet" href="css/app.css">
+    <!-- Script for Foundation 5 -->
+    <script src="js/vendor/modernizr.js"></script>
 
     <!-- Angular -->
     <script src="/node_modules/angular/angular.js"></script>
@@ -20,11 +27,26 @@
     <base href="/" />
 </head>
 <body>
-    <!-- <div ng-controller="Controller">
-      <my-customer info="vojta"></my-customer>
-    </div> -->
 
 <!-- UI Router Example -->
+<div class="icon-bar five-up">
+    <a class="item">
+        <i class="fi-home"></i>
+    </a>
+    <a class="item">
+        <i class="fi-bookmark"></i>
+    </a>
+    <a class="item">
+        <i class="fi-info"></i>
+    </a>
+    <a class="item">
+        <i class="fi-mail"></i>
+    </a>
+    <a class="item">
+        <i class="fi-like"></i>
+    </a>
+</div>
+
 <div class="">
     <div class="">
         <ul class="">
@@ -46,7 +68,10 @@
 <script src="/editevent.js"></script>
 <script src="/routes.js"></script>
 
-
+<!-- default Foundation script -->
+<script>
+  $(document).foundation();
+</script>
 
 
 </body>
