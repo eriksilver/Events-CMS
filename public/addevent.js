@@ -88,6 +88,7 @@ angular.module('EventCMS')
                 message: args.message,
                 type: args.result,
             });
+            //use Angular $timeout to call closeAlert function after X milliseconds
             $timeout(function () {$scope.closeAlert();},3000);
             $scope.$apply();
         });
