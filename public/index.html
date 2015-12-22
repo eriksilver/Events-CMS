@@ -28,32 +28,20 @@
 </head>
 <body>
 
-<!-- UI Router Example -->
+<!-- Foundation Icon Bar Nav with UI Router links -->
 <div class="icon-bar five-up">
-    <a class="item">
-        <i class="fi-home"></i>
+    <a class="item" ui-sref="eventList">
+        <i class="fi-list-thumbnails"></i>
+        <label>Event List</label>
     </a>
-    <a class="item">
-        <i class="fi-bookmark"></i>
+    <a class="item" ui-sref="addEvent">
+        <i class="fi-plus"></i>
+        <label>Add Event</label>
     </a>
     <a class="item">
         <i class="fi-info"></i>
+        <label>About</label>
     </a>
-    <a class="item">
-        <i class="fi-mail"></i>
-    </a>
-    <a class="item">
-        <i class="fi-like"></i>
-    </a>
-</div>
-
-<div class="">
-    <div class="">
-        <ul class="">
-            <li><a ui-sref="eventList">List View</a></li>
-            <li><a ui-sref="addEvent">Add Event</a></li>
-        </ul>
-    </div>
 </div>
 <main ui-view></main>
 
