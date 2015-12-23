@@ -24,3 +24,10 @@ h1,h3,h4 {
 .icon-bar {
     background: #53868B; /*aqua color*/
 }
+.about-text-align {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+.about-text-spacing {
+    margin-bottom: 0px;
+}
