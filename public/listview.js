@@ -10,6 +10,7 @@ angular.module('EventCMS')
 
         // create a synchronized array for events
         $scope.events = $firebaseArray(ref);
-        console.log("scope.events",$scope.events);
+
+        $log.log("scope.events",$scope.events);
 
 }]);
