@@ -9,14 +9,6 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     //     $logProvider.debugEnabled(true);
 });
 
-// myApp.controller("HelloWorldController", ['$scope',
-//     function ($scope) {
-//         $scope.greeting = 'Hello World!';
-//         // this.message = "Hello";
-//
-//     // $scope.message = "Hello";
-// }]);
-
 myApp.controller("AppCtrl", ['$scope',
 function ($scope) {
     $scope.text = 'Hello World!';

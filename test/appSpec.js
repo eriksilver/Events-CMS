@@ -1,5 +1,4 @@
 
-// angular.module('EventCMS')
 
 describe('controller test', function(){
     var scope; //we'll use this scope in our tests
@@ -19,6 +18,7 @@ describe('controller test', function(){
     });
 });
 
+//Other versions of setting up controller test below
 
 // describe('Hello World example', function() {
 //
