@@ -29,4 +29,5 @@ Key Components:
 ### To run
 
 Local: ```npm start``` <br>
-Web: [https://events-to-manage.herokuapp.com/](https://events-to-manage.herokuapp.com/)
+Web: [https://events-to-manage.herokuapp.com/](https://events-to-manage.herokuapp.com/) <br>
+Unit test: ```karma start my.conf.js```
