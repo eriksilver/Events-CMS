@@ -7,20 +7,17 @@ module.exports = function(config) {
         // base path that will be used to resolve all patterns (eg. files, exclude)
         basePath: '',
 
-
         // frameworks to use
         // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
         frameworks: ['jasmine'],
 
-
         // list of files / patterns to load in the browser
         files: [
-            // '**/*.js',
-            // '**/!(index).js',
-            // 'node_modules/!(express)',
             'public/node_modules/angular/angular.js',
             'public/node_modules/angular-ui-router/build/angular-ui-router.js',
             'public/node_modules/angularfire/dist/angularfire.js',
+            'https://cdn.firebase.com/js/client/2.3.2/firebase.js',
+            // 'public/node_modules/firebase/lib/firebase-web.js', //firebase from node_modules didnt't work
             'public/app.js',
             'public/routes.js',
             'public/listview.js',

@@ -1,6 +1,5 @@
 
-
-describe('controller test', function(){
+describe('AppCtrl hello world controller test', function(){
     var scope; //we'll use this scope in our tests
 
     //mock Application to allow us to inject our own dependencies
@@ -14,7 +13,31 @@ describe('controller test', function(){
     }));
     // tests start here
     it('should have variable text = "Hello World!"', function(){
+        expect(scope.text).toBeDefined();
         expect(scope.text).toBe('Hello World!');
+    });
+});
+
+describe('ListCtrl controller test', function(){
+    var scope; //we'll use this scope in our tests
+    var listViewCtrl; //define controller to use in tests
+
+    //mock Application to allow us to inject our own dependencies
+    beforeEach(module('EventCMS'));
+    //mock the controller for the same reason and include $rootScope and $controller
+    beforeEach(inject(function($rootScope, $controller){
+        //create an empty scope
+        scope = $rootScope.$new();
+        //declare the controller and inject our empty scope
+        listViewCtrl = $controller('ListCtrl', {$scope: scope});
+    }));
+
+    // tests start here
+    it('should have scope.events be defined', function(){
+        //controller exists
+        expect(listViewCtrl).not.toBeNull();
+        //scope.events is populated
+        expect(scope.events).toBeDefined();
     });
 });
 
